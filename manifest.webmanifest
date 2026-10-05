@@ -1,0 +1,17 @@
+{
+  "name": "Trial Tally",
+  "short_name": "Trial Tally",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f3f6ee",
+  "theme_color": "#346742",
+  "icons": [
+    {
+      "src": "assets/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

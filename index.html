@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Turn a free trial into a clear deadline and a practical exit kit."
+    />
+    <meta name="theme-color" content="#346742" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob:; connect-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'"
+    />
+    <title>Trial Tally — Mete Alp Karvan</title>
+    <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body class="tally">
+    <a class="skip" href="#main"
+      ><span data-tr="İçeriğe geç" data-en="Skip to content"
+        >İçeriğe geç</span
+      ></a
+    >
+    <div class="shell">
+      <header class="topbar">
+        <a class="brand" href="./"
+          ><img src="assets/icon.svg" alt="" />Trial Tally</a
+        >
+        <nav class="nav" aria-label="App">
+          <a href="https://github.com/metealpkarvan/trial-tally">GitHub ↗</a
+          ><button id="language" type="button" class="quiet">EN</button>
+        </nav>
+      </header>
+      <main id="main">
+        <section class="intro">
+          <div>
+            <div class="eyebrow">A FREE TRIAL DESERVES A CLEAR EXIT</div>
+            <h1>Trial Tally</h1>
+            <p>
+              <span
+                data-tr="Deneme abonelikleri için karar tarihi ve uygulanabilir çıkış hazırlığı."
+                data-en="Turn a free trial into a clear deadline and a practical exit kit."
+                >Deneme abonelikleri için karar tarihi ve uygulanabilir çıkış
+                hazırlığı.</span
+              >
+            </p>
+          </div>
+          <span class="pill"
+            ><span
+              data-tr="Hesapsız · cihazında çalışır"
+              data-en="No account · runs on your device"
+              >Hesapsız · cihazında çalışır</span
+            ></span
+          >
+        </section>
+        <div class="split">
+          <section class="panel">
+            <div class="bar">
+              <h2>
+                <span data-tr="Denemeyi kaydet" data-en="Record a trial"
+                  >Denemeyi kaydet</span
+                >
+              </h2>
+              <button id="demo" class="quiet">
+                <span data-tr="Örneği dene" data-en="Try a sample"
+                  >Örneği dene</span
+                >
+              </button>
+            </div>
+            <form id="trial-form">
+              <div class="field">
+                <label for="name"
+                  ><span data-tr="Hizmet adı" data-en="Service name"
+                    >Hizmet adı</span
+                  ></label
+                ><input id="name" maxlength="120" required />
+              </div>
+              <div class="row">
+                <div class="field">
+                  <label for="deadline"
+                    ><span
+                      data-tr="Kontrol ettiğin son karar tarihi"
+                      data-en="Verified decision deadline"
+                      >Kontrol ettiğin son karar tarihi</span
+                    ></label
+                  ><input id="deadline" type="date" required />
+                </div>
+                <div class="field">
+                  <label for="buffer"
+                    ><span
+                      data-tr="Kaç gün önce karar vereceksin?"
+                      data-en="Decide how many days earlier?"
+                      >Kaç gün önce karar vereceksin?</span
+                    ></label
+                  ><input
+                    id="buffer"
+                    type="number"
+                    min="0"
+                    max="30"
+                    value="2"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="row">
+                <div class="field">
+                  <label for="price"
+                    ><span
+                      data-tr="Deneme sonrası fiyat"
+                      data-en="Price after trial"
+                      >Deneme sonrası fiyat</span
+                    ></label
+                  ><input
+                    id="price"
+                    type="number"
+                    min="0"
+                    max="1000000"
+                    step=".01"
+                    required
+                  />
+                </div>
+                <div class="field">
+                  <label for="currency"
+                    ><span data-tr="Para birimi" data-en="Currency"
+                      >Para birimi</span
+                    ></label
+                  ><select id="currency">
+                    <option>TRY</option>
+                    <option>USD</option>
+                    <option>EUR</option>
+                    <option>GBP</option>
+                  </select>
+                </div>
+              </div>
+              <div class="field">
+                <label for="billing"
+                  ><span data-tr="Fiyatın dönemi" data-en="Price period"
+                    >Fiyatın dönemi</span
+                  ></label
+                ><select id="billing">
+                  <option value="monthly" data-en="Monthly" data-tr="Aylık">
+                    Aylık
+                  </option>
+                  <option value="yearly" data-en="Yearly" data-tr="Yıllık">
+                    Yıllık
+                  </option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="commitment"
+                  ><span
+                    data-tr="Sözleşmede ne yazıyor?"
+                    data-en="What does the agreement say?"
+                    >Sözleşmede ne yazıyor?</span
+                  ></label
+                ><select id="commitment">
+                  <option
+                    value="unknown"
+                    data-en="Not checked"
+                    data-tr="Kontrol etmedim"
+                  >
+                    Kontrol etmedim
+                  </option>
+                  <option
+                    value="monthly"
+                    data-en="Monthly commitment"
+                    data-tr="Aylık taahhüt"
+                  >
+                    Aylık taahhüt
+                  </option>
+                  <option
+                    value="annual-monthly"
+                    data-en="Annual, paid monthly"
+                    data-tr="Yıllık, aylık ödemeli"
+                  >
+                    Yıllık, aylık ödemeli
+                  </option>
+                  <option
+                    value="annual"
+                    data-en="Annual"
+                    data-tr="Yıllık taahhüt"
+                  >
+                    Yıllık taahhüt
+                  </option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="url"
+                  ><span
+                    data-tr="İptal/hesap sayfası (isteğe bağlı)"
+                    data-en="Cancellation/account URL (optional)"
+                    >İptal/hesap sayfası (isteğe bağlı)</span
+                  ></label
+                ><input id="url" type="url" maxlength="2000" />
+              </div>
+              <div class="field">
+                <label for="note"
+                  ><span
+                    data-tr="Saat dilimi, adımlar, koşullar veya makbuz notu"
+                    data-en="Time zone, steps, terms or receipt note"
+                    >Saat dilimi, adımlar, koşullar veya makbuz notu</span
+                  ></label
+                ><textarea id="note" maxlength="3000"></textarea>
+              </div>
+              <div class="actions">
+                <button class="primary" id="add" type="submit">
+                  <span data-tr="Çıkış kiti oluştur" data-en="Create exit kit"
+                    >Çıkış kiti oluştur</span
+                  ></button
+                ><button id="cancel-edit" type="button" hidden>
+                  <span data-tr="Düzenlemeyi bırak" data-en="Cancel edit"
+                    >Düzenlemeyi bırak</span
+                  >
+                </button>
+              </div>
+            </form>
+          </section>
+          <section>
+            <div class="notice">
+              <span
+                data-tr="Tarihi hizmetin kendi koşullarından kontrol et. Bu araç aboneliği iptal etmez ve sekme kapalıyken hatırlatmaz. Takvim dosyasını kendi takvimine ekleyebilirsin."
+                data-en="Check the date against the service’s own terms. This app does not cancel subscriptions or remind you while closed. You can import the calendar file into your calendar."
+                >Tarihi hizmetin kendi koşullarından kontrol et. Bu araç
+                aboneliği iptal etmez ve sekme kapalıyken hatırlatmaz. Takvim
+                dosyasını kendi takvimine ekleyebilirsin.</span
+              >
+            </div>
+            <div class="metrics">
+              <div class="metric">
+                <strong id="active-count">0</strong
+                ><span data-tr="Aktif deneme" data-en="Active trials"
+                  >Aktif deneme</span
+                >
+              </div>
+              <div class="metric">
+                <strong id="due-count">0</strong
+                ><span data-tr="Karar zamanı geldi" data-en="Ready for decision"
+                  >Karar zamanı geldi</span
+                >
+              </div>
+            </div>
+            <div class="bar">
+              <h2>
+                <span
+                  data-tr="Karar ve çıkış kitleri"
+                  data-en="Decision and exit kits"
+                  >Karar ve çıkış kitleri</span
+                >
+              </h2>
+              <button id="calendar" class="quiet">
+                <span
+                  data-tr="Takvim indir (.ics)"
+                  data-en="Download calendar (.ics)"
+                  >Takvim indir (.ics)</span
+                >
+              </button>
+            </div>
+            <div id="trials" class="stack"></div>
+          </section>
+        </div>
+        <div class="toolbar">
+          <button id="backup">
+            <span data-tr="JSON yedek indir" data-en="Download JSON backup"
+              >JSON yedek indir</span
+            ></button
+          ><label
+            for="import"
+            class="visually-hidden"
+            data-tr="Yedek yükle"
+            data-en="Import backup"
+            >Yedek yükle</label
+          ><input
+            id="import"
+            type="file"
+            accept=".json,application/json"
+          /><button id="clear" class="quiet danger">
+            <span data-tr="Yerel veriyi sil" data-en="Clear local data"
+              >Yerel veriyi sil</span
+            >
+          </button>
+        </div>
+      </main>
+      <footer class="footer">
+        <details>
+          <summary>
+            <span
+              data-tr="Nasıl çalışır? Gizlilik ve sınırlar"
+              data-en="How it works · privacy and limits"
+              >Nasıl çalışır? Gizlilik ve sınırlar</span
+            >
+          </summary>
+          <p>
+            <span
+              data-tr="Kayıtlar bu tarayıcıda saklanır; banka, e-posta veya abonelik hesabına bağlanılmaz. Tarihler gün bazındadır; hizmetin kesin saati ve saat dilimini ayrıca doğrula. 12 aylık tutar, yalnızca girdiğin sabit fiyatın aritmetik karşılığıdır; vergi, fiyat değişimi ve iptal bedeli hesaplanmaz. Takvim hatırlatmaları kullandığın takvim uygulamasına bağlıdır."
+              data-en="Records stay in this browser; no bank, email or subscription account is connected. Dates are day-based; verify the service’s exact time and time zone separately. The 12-month figure is simple arithmetic from your fixed price, excluding taxes, price changes and cancellation fees. Calendar reminders depend on your calendar app."
+              >Kayıtlar bu tarayıcıda saklanır; banka, e-posta veya abonelik
+              hesabına bağlanılmaz. Tarihler gün bazındadır; hizmetin kesin
+              saati ve saat dilimini ayrıca doğrula. 12 aylık tutar, yalnızca
+              girdiğin sabit fiyatın aritmetik karşılığıdır; vergi, fiyat
+              değişimi ve iptal bedeli hesaplanmaz. Takvim hatırlatmaları
+              kullandığın takvim uygulamasına bağlıdır.</span
+            >
+          </p>
+          <p>
+            <span
+              data-tr="Örnek veriler kurgusaldır. Bu bir X/Twitter entegrasyonu değildir. Araştırma kaynakları, tasarım gerekçeleri ve testler GitHub deposunda açıklanır."
+              data-en="Sample data is fictional. This is not an X/Twitter integration. Research sources, design decisions and tests are documented in the repository."
+              >Örnek veriler kurgusaldır. Bu bir X/Twitter entegrasyonu
+              değildir. Araştırma kaynakları, tasarım gerekçeleri ve testler
+              GitHub deposunda açıklanır.</span
+            >
+          </p>
+          <a
+            href="https://github.com/metealpkarvan/trial-tally/blob/main/docs/RESEARCH.md"
+            ><span
+              data-tr="Araştırma notlarını oku"
+              data-en="Read the research notes"
+              >Araştırma notlarını oku</span
+            >
+            ↗</a
+          >
+        </details>
+        <div>© 2026 Mete Alp Karvan · MIT · v1.0.0</div>
+      </footer>
+    </div>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="src/app.js"></script>
+  </body>
+</html>

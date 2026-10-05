@@ -1,0 +1,16 @@
+{
+  "name": "trial-tally",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Turn a free trial into a clear deadline and a practical exit kit.",
+  "scripts": {
+    "test": "node --test",
+    "build": "node scripts/build.mjs",
+    "start": "python3 -m http.server 8080 --bind 127.0.0.1"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "license": "MIT"
+}
