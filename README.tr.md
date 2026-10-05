@@ -40,3 +40,8 @@ Geliştirme için Node.js 22+ gerekir:
     npm run build
 
 Testler, mimari tercihler ve kullanım kontrolleri İngilizce teknik belgelerde açıklanır. MIT lisansıyla kullanabilir, değiştirebilir ve katkıda bulunabilirsin.
+
+
+## Intel ve Apple Silicon
+
+Tarayıcı uygulaması modern tarayıcılarla her iki Mac mimarisinde çalışır. Rosetta gerekmez; ZIP içindeki HTML/CSS/JavaScript dosyaları mimariden bağımsızdır. Otomatik kontroller, yerel Node.js ile Intel ve arm64 macOS çalıştırıcılarında da yürütülür. Bu kural kontrolleri her tarayıcı ve fiziksel cihazın denenmiş olduğu anlamına gelmez.

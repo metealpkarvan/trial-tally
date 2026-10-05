@@ -53,3 +53,8 @@ Core checks: Leap years, invalid dates, month/DST boundaries, cancellation evide
 See [architecture](docs/DECISIONS.md), [contributing](CONTRIBUTING.md), [roadmap](docs/ROADMAP.md) and [changelog](CHANGELOG.md).
 
 MIT © 2026 Mete Alp Karvan
+
+
+## Mac architecture support
+
+The browser app supports both Intel and Apple Silicon Macs through a modern browser. No Rosetta or processor-specific app package is needed. CI runs the rule tests with native Node.js on x86_64 and arm64 macOS runners; browser/device coverage is separate from these checks. The downloaded ZIP contains the same architecture-independent HTML, CSS and JavaScript as the live app.
